@@ -54,21 +54,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
   
 
-  app.get('/:word/echo',function(req,res){
-    res.send({
-        echo:req.params.word
-    })
+//   app.get('/:word/echo',function(req,res){
+//     res.send({
+//         echo:req.params.word
+//     })
 
-  })
+//   })
 
 
 
-  app.get('/name',function(req,res){
+//   app.get('/name',function(req,res){
     
-    res.send({'name':req.query.first+" "+req.query.last})
+//     res.send({'name':req.query.first+" "+req.query.last})
+//   })
+
+  app.post('/name',function(req,res){
+    res.send({
+        name : req.body.first+" "+req.body.last
+    })
   })
-
-
 
 
 
