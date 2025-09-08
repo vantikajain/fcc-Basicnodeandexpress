@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 console.log("Hello World");
 require('dotenv').config()
+const bodyParser = require('body-parser');
 
 // app.get("/",function(req, res) {
 //     res.send('Hello Express');
@@ -13,6 +14,8 @@ app.get("/",function(req, res) {
 })
 
 app.use("/public",express.static(__dirname + "/public"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // app.get("/json",function(req,res){
 //     res.json(
@@ -64,15 +67,6 @@ app.use("/public",express.static(__dirname + "/public"));
     
     res.send({'name':req.query.first+" "+req.query.last})
   })
-
-
-
-
-
-
-
-
-
 
 
 
