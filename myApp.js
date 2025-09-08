@@ -60,6 +60,12 @@ app.use("/public",express.static(__dirname + "/public"));
 
 
 
+  app.get('/name',function(req,res){
+    
+    res.send({'name':req.query.first+" "+req.query.last})
+  })
+
+
 
 
 
